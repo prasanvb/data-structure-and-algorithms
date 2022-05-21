@@ -133,11 +133,9 @@ class DoubleLinkedList {
     if (parsedIndex === 0) return this.shift();
     if (parsedIndex === this.length - 1) return this.pop();
     let temp = this.get(parsedIndex);
-    let before = this.get(parsedIndex - 1);
-    let after = this.get(parsedIndex + 1);
     if (temp) {
-      before.next = after;
-      after.previous = before;
+      temp.previous.next = temp.next; // Notice the nested objects are assigned
+      temp.next.previous = temp.previous; // Notice the nested objects are assigned
       temp.previous = null;
       temp.next = null;
       this.length--;
