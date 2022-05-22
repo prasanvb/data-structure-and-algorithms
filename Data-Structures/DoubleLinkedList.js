@@ -217,9 +217,9 @@ dllExample_6.push(14);
 // logger(dllExample_6.insert(2, 121212));
 // logger(dllExample_6.insert(4, 606060));
 
-logger(dllExample_6);
-logger(dllExample_6.remove(2));
-logger(dllExample_6.remove(0));
-logger(dllExample_6.remove(2));
-logger(dllExample_6.remove(9));
-logger(dllExample_6);
+// logger(dllExample_6);
+// logger(dllExample_6.remove(2));
+// logger(dllExample_6.remove(0));
+// logger(dllExample_6.remove(2));
+// logger(dllExample_6.remove(9));
+// logger(dllExample_6);
