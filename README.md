@@ -1,7 +1,3 @@
-### Description
-
-Detailed examples on Data Structures and Algorithm
-
 ## Data Structures
 
 - Arrays
@@ -26,7 +22,11 @@ Detailed examples on Data Structures and Algorithm
 - Breadth First Search
 - Depth First Search
 
-### Steps
+### Description
+
+Detailed examples on Data Structures and Algorithm
+
+### Steps to run the examples
 
 1.  Navigate to the repo folder
 2.  If you have node installed you can run `node <filename>.js` every time to manually execute the changes in the file
