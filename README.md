@@ -1,8 +1,32 @@
-## Description
+### Description
 
 Detailed examples on Data Structures and Algorithm
 
-## Steps
+## Data Structures
+
+- Arrays
+- Linked Lists
+- Doubly Linked Lists
+- Stacks & Queues
+- Binary Trees
+- Hash Tables
+- Graphs
+
+## Algorithms
+
+- Sorting
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
+
+## Searching
+
+- Breadth First Search
+- Depth First Search
+
+### Steps
 
 1.  Navigate to the repo folder
 2.  If you have node installed you can run `node <filename>.js` every time to manually execute the changes in the file

@@ -24,6 +24,7 @@ class Stack {
   }
 
   pushStack(value) {
+    // similar to UNSHIFT method in LinkedList
     if (!value) return undefined;
     let newNode = new Node(value);
     newNode.next = this.top;
@@ -33,6 +34,7 @@ class Stack {
   }
 
   popStack() {
+    // similar to SHIFT method in LinkedList
     if (this.height === 0) return undefined;
     let temp = this.top;
     this.top = this.top.next;
@@ -42,7 +44,8 @@ class Stack {
   }
 }
 
-/* ------ Stack Creation  ------- */
+/* ------ Stack is First In Last Out concept  ------- */
+
 let Example_1 = new Stack(10);
 Example_1.pushStack(20);
 Example_1.pushStack(30);
