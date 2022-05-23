@@ -61,11 +61,11 @@ class Queue {
 /* ------ Enqueue example ------ */
 let Example_1 = new Queue();
 
-logger(Example_1);
-logger(Example_1.enqueue(20));
-Example_1.enqueue(30);
-Example_1.enqueue(40);
-logger(Example_1.enqueue(50));
+// logger(Example_1);
+// logger(Example_1.enqueue(20));
+// Example_1.enqueue(30);
+// Example_1.enqueue(40);
+// logger(Example_1.enqueue(50));
 
 /* ------ Dequeue example ------ */
 

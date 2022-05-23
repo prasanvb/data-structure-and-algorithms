@@ -1,6 +1,5 @@
 function logger(value) {
   console.dir(value, { depth: null });
-  // console.dir(value, { depth: null, colors: true });
   console.log("-----------------------");
 }
 
