@@ -51,8 +51,8 @@ Example_1.pushStack(20);
 Example_1.pushStack(30);
 Example_1.pushStack(40);
 
-logger(Example_1);
-logger(Example_1.popStack());
-logger(Example_1);
-logger(Example_1.popStack());
-logger(Example_1);
+// logger(Example_1);
+// logger(Example_1.popStack());
+// logger(Example_1);
+// logger(Example_1.popStack());
+// logger(Example_1);
