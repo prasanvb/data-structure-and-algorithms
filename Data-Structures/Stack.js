@@ -44,7 +44,7 @@ class Stack {
   }
 }
 
-/* ------ Stack is First In Last Out concept  ------- */
+/* ------ Stack is FIRST IN LAST OUT concept  ------- */
 
 let Example_1 = new Stack(10);
 Example_1.pushStack(20);

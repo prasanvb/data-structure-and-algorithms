@@ -3,7 +3,8 @@
 - Arrays
 - Linked Lists
 - Doubly Linked Lists
-- Stacks & Queues
+- Stacks
+- Queues
 - Binary Trees
 - Hash Tables
 - Graphs
@@ -28,6 +29,10 @@ Detailed examples on Data Structures and Algorithm
 
 ### Steps to run the examples
 
-1.  Navigate to the repo folder
+1.  First navigate to the required repo folder
 2.  If you have node installed you can run `node <filename>.js` every time to manually execute the changes in the file
 3.  If you have nodemon package installed you can run `nodemon <filename>.js` to auto watch and execute the changes in the file
+
+### Additional Resources
+
+- https://www.bigocheatsheet.com/

@@ -56,7 +56,7 @@ class Queue {
   }
 }
 
-/* ------ Queue is First In First Out concept  ------- */
+/* ------ Queue is FIRST IN FIRST OUT concept  ------- */
 
 /* ------ Enqueue example ------ */
 let Example_1 = new Queue();

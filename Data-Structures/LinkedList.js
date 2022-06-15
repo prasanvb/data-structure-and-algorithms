@@ -174,6 +174,7 @@ Example_1.push(100);
 
 /* ------ PUSH method ------ */
 let Example_2 = new LinkedList();
+// logger(Example_2);
 Example_2.push(2);
 // logger(Example_2);
 
@@ -212,7 +213,7 @@ Example_6.push(134);
 Example_6.push(208);
 Example_6.push(312);
 // logger(Example_6);
-// logger(Example_6.get(0));
+// logger(Example_6.get(1));
 
 /* ------ SET method ------ */
 let Example_7 = new LinkedList(100);
