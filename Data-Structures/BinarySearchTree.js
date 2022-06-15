@@ -120,23 +120,28 @@ class BinarySearchTree {
 /* ------ Binary Search Tree which accepts duplicates ------- */
 /* ------ Object Creation ------- */
 let BST = new BinarySearchTree();
+// logger(BST);
 
 /* ------ INSERT Method ------- */
 BST.insert(47);
+// logger(BST);
+
 BST.insert(21);
 BST.insert(76);
 BST.insert(18);
 BST.insert(52);
 BST.insert(82);
-// logger(BST.insert(27));
+BST.insert(18);
+logger(BST.insert(27));
 
 /* ------ CONTAINS Method ------- */
 
-// logger(BST.contains(27));
-// logger(BST.contains(17));
+logger(BST.contains(27));
+logger(BST.contains(17));
 
 /* ------ MINIMUM & MAXIMUM Method ------- */
 logger(BST.minValueNode(BST.root));
 logger(BST.minValueNode(BST.root.right));
-logger(BST.maxValueNode(BST.root));
-logger(BST.maxValueNode(BST.root.left));
+logger(BST.minValueNode(BST.root.right.right));
+// logger(BST.maxValueNode(BST.root));
+// logger(BST.maxValueNode(BST.root.left));

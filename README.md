@@ -5,7 +5,7 @@
 - Doubly Linked Lists
 - Stacks
 - Queues
-- Binary Trees
+- Binary Search Tree
 - Hash Tables
 - Graphs
 

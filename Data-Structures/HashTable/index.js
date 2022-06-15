@@ -19,8 +19,10 @@ class HashTable {
   set(key, value) {
     let index = this._hash(key);
     if (!this.dataMap[index]) {
+      // if there is no item in the index, first create an empty array then push the key value pair
       this.dataMap[index] = [];
     }
+    // if there are existing items in the index, then directly push the key value pair to the existing array
     this.dataMap[index].push([key, value]);
   }
 
@@ -55,6 +57,7 @@ class HashTable {
 
 /* ----- HashTable Creation ----- */
 let myHashTable = new HashTable();
+logger(myHashTable);
 
 /* ----- SET method ----- */
 myHashTable.set("screws", 8000);
