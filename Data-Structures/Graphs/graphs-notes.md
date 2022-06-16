@@ -12,3 +12,12 @@
   > B:['A','C'],
   > C: ['A','B']
   > }
+- Big O
+  - Space Complexity of
+    - Adjacency Matrix is in-efficient
+    - Adjacency List is efficient
+  - Time Complexity
+    - Adjacency Matrix
+      - Adding a vertex:
+    - Adjacency List
+      - Adding a vertex:
