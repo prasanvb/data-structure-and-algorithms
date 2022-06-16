@@ -7,4 +7,8 @@
 - Typically Trees, LinkedList and few other data structures can also be classified as graphs.
 - Graphs can be represents as Adjacency Matrix or Adjacency List.
 - Adjacency List
-  `{ A:['B','E'], B:['A','C'] }`
+  > {
+  > A:['B','C'],
+  > B:['A','C'],
+  > C: ['A','B']
+  > }
