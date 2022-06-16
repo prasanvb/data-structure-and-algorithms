@@ -18,6 +18,12 @@
     - Adjacency List is efficient
   - Time Complexity
     - Adjacency Matrix
-      - Adding a vertex:
+      - Adding a vertex: O(|V|^2)
+      - Adding an edge: O(1)
+      - Removing an edge: O(1)
+      - Removing an vertex: O(|V|^2)
     - Adjacency List
-      - Adding a vertex:
+      - Adding a vertex: O(1)
+      - Adding an edge: O(1)
+      - Removing an edge: O(|E|)
+      - Removing an vertex: O(|V|+|E|)
