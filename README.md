@@ -12,11 +12,11 @@
 ## Algorithms
 
 - Sorting
-- Bubble Sort
-- Selection Sort
-- Insertion Sort
-- Merge Sort
-- Quick Sort
+  - Bubble Sort
+  - Selection Sort
+  - Insertion Sort
+  - Merge Sort
+  - Quick Sort
 
 ## Searching
 

@@ -6,7 +6,7 @@
 - Connection between vertexes can be bi-directional or uni-directional.
 - Typically Trees, LinkedList and few other data structures can also be classified as graphs.
 - Graphs can be represents as Adjacency Matrix or Adjacency List.
-- Adjacency List
+- Sample Adjacency List:
   > {
   > A:['B','C'],
   > B:['A','C'],
