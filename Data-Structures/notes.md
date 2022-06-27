@@ -17,6 +17,12 @@
 - Drop Non-Dominants: O(n^2+n) ~ O(n^2) - code was executed n\*n number for times and then n number fo times (i.e, two nested for-loops and a simple for-loop inside a function)
 - Constant Times: O(1) - ir respective of the input given code was executed only once (i.e. simple addition inside function)
 - O(log n) - Divide and conquer an sorted Array
+  - Let say we have an array = [1,2,3,4,5,6,7,8]
+  - divide it until you reach single item that is
+    - [1,2,3,4] [5,6,7,8]
+    - [1,2] [3,4] [5,6] [7,8]
+    - [1][2][3][4][5][6][7][8]
+  - i.e. 2^3 = 8 or we can say log2 8 = 3
 - O(nlog n) - used on some sorting algorithm
 - Different Terms for Input:
   - O(a+b): code was executed a number for times and then b number of times (i.e, two different for-loops iterations inside a function)
