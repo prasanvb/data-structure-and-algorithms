@@ -1,12 +1,7 @@
-function logger(value) {
-  console.dir(value, { depth: null });
-  console.log("-----------------------");
-}
+let myArray = [4, 2, 6, 5, 1, 3];
 
-let myArray = [3, 7, 1, 8, 4, 6, 9, 2];
-
-function selectionSort(arr) {
-  // logger({ arr });
+function selectionSort(array) {
+  let arr = array.slice();
   let iterator = 0;
   for (let i = 0; i < arr.length - 1; i++) {
     let min = i;
@@ -20,11 +15,10 @@ function selectionSort(arr) {
       let temp = arr[i];
       arr[i] = arr[min];
       arr[min] = temp;
-      console.log({ iterator });
     }
-    logger(arr);
   }
+  console.log({ iterator });
   return arr;
 }
 
-logger("Selection Sort = " + selectionSort(myArray));
+console.log("selectionSort = " + selectionSort(myArray));

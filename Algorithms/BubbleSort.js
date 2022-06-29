@@ -1,8 +1,3 @@
-function logger(value) {
-  console.dir(value, { depth: null });
-  console.log("-----------------------");
-}
-
 const myArray = [4, 2, 6, 5, 1, 3];
 
 function bubbleSort(array) {
@@ -17,9 +12,9 @@ function bubbleSort(array) {
         // arr[j + 1] = temp;
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
       }
-      console.log({ iterator });
     }
   }
+  console.log({ iterator });
   return arr;
 }
 
@@ -35,12 +30,12 @@ function bubbleSort_Alternate(array) {
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
       }
-      console.log({ iterator });
     }
   }
+  console.log({ iterator });
   return arr;
 }
 
-logger(bubbleSort(myArray));
+console.log("bubbleSort = " + bubbleSort(myArray));
 
-logger(bubbleSort_Alternate(myArray));
+console.log("bubbleSort_Alternate = " + bubbleSort_Alternate(myArray));
