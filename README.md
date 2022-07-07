@@ -20,8 +20,9 @@
 
 ## Searching
 
-- Breadth First Search
-- Depth First Search
+- Binary Search Tree
+  - Breadth First Search
+  - Depth First Search
 
 ### Description
 
