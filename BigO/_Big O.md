@@ -1,6 +1,8 @@
 # Big O Intro
 
 - Time Complexity
+  - Time complexity represents the number of times a statement/function is executed (mostly depending inputs provided)
+
 - Space Complexity
 
 ## Efficiency Case Representation using Greek Letter
@@ -11,7 +13,7 @@
 
 ## Big O Notation
 
-- O(n) is called Linear Time Complexity, code was executed `n` number for times depending on the input (i.e. function holding a single for-loop)
+- O(n): code was executed `n` number for times depending on the input (i.e. function holding a single for-loop). It is called Linear Time Complexity, if it takes the same time regardless of the number of inputs.
 
 - Drop Constants: O(2n) ~ O(n) - code was executed n+n number for times (i.e, two same `n` number for-loops iterations one after another inside a function)
 
@@ -39,8 +41,8 @@
 
 ## Big O Notation efficiency
 
-- O(1): most efficient code
-- O(log n): very efficient code
-- O(n): efficient code
+- O(1): most efficient code (Constant Time Complexity)
+- O(log n): very efficient code (Logarithmic Time Complexity)
+- O(n): efficient code (Linear Time Complexity)
 - O(nlog n): very in-efficient code
-- O(n^2): most in-efficient code
+- O(n^2): most in-efficient code (Quadratic Time Complexity)
