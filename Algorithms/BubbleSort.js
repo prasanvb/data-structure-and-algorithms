@@ -1,41 +1,26 @@
-const myArray = [4, 2, 6, 5, 1, 3];
+let arr = [12,4,9,3,70,1e+0,4.4,3.000];
 
-function bubbleSort(array) {
-  let arr = array.slice();
-  let iterator = 0;
-  for (let i = arr.length - 1; i > 0; i--) {
-    for (let j = 0; j < arr.length - 1; j++) {
-      iterator++;
-      if (arr[j] > arr[j + 1]) {
-        // let temp = arr[j];
-        // arr[j] = arr[j + 1];
-        // arr[j + 1] = temp;
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+console.log(arr);
+
+const bubbleSort = (arr) => {
+  // steps
+  // 1. (inner) for loop to compare adjacent items in an array and 
+  // swap the largest item to the right
+  // 2. (outer) for loop repeat step 1, but exclude the already 
+  // sorted items in the array 
+  
+  for(let i=arr.length-1; i > 0; i--){
+    for(let j=0; j < arr.length; j++){
+      if(arr[j] > arr[j+1]){
+        let temp = arr[j+1];
+        arr[j+1] = arr[j];
+        arr[j] = temp;
       }
     }
   }
-  console.log({ iterator });
+  
   return arr;
+  
 }
 
-// this logic has lesser number of iterations
-function bubbleSort_Alternate(array) {
-  let arr = array.slice();
-  let iterator = 0;
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = 0; j < arr.length - 1 - i; j++) {
-      iterator++;
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
-    }
-  }
-  console.log({ iterator });
-  return arr;
-}
-
-console.log("bubbleSort = " + bubbleSort(myArray));
-
-console.log("bubbleSort_Alternate = " + bubbleSort_Alternate(myArray));
+console.log("bubbleSort = " + bubbleSort(arr));

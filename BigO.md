@@ -1,15 +1,15 @@
-### Big O Intro
+# Big O Intro
 
 - Time Complexity
 - Space Complexity
 
-### Efficiency Case Representation using Greek Letter
+## Efficiency Case Representation using Greek Letter
 
 - Omega - Best case
 - Theta - Average
 - Omicron - Worst Case (The O from the Big O comes this)
 
-### Big O Notation
+## Big O Notation
 
 - O(n) - code was executed n number for times (i.e. a simple for-loop inside a function)
 - Drop Constants: O(2n) ~ O(n) - code was executed n+n number for times (i.e, two same n number for-loops iterations inside a function)
@@ -28,7 +28,7 @@
   - O(a+b): code was executed a number for times and then b number of times (i.e, two different for-loops iterations inside a function)
   - O(a^b): code was executed a\*b number for times (i.e, two nested different number for-loops iterations inside a function)
 
-### Big O Notation efficiency
+## Big O Notation efficiency
 
 - O(1): most efficient code
 - O(log n): very efficient code
