@@ -1,5 +1,9 @@
 
+// [ 0,  1,  1,  2,  3, 5,  8, 13, 21, 34, 55, 89]
+// Idea: Except the initial default seed [0,1] each number is sum 2 adjacent number to its left.
+
 function fibonacciSequence(n) {
+
   // Important Note: Default seeds for Fibonacci sequence are 0 and 1.
   let retArray = [0,1]
   
