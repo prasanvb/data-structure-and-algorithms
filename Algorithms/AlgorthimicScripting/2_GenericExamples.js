@@ -43,3 +43,31 @@ console.log(result(12));
 // Input is in range
 
 /*--------------------------------------------------------------------------------------------------------------------*/
+
+// Example 3
+// Sliding Window Technique Demonstration
+/*
+  Given an array of n integers and a positive number k. We are allowed to take any k integers from the given array. The task is to find the minimum possible value of the difference between maximum and minimum of K numbers.
+*/
+
+let arr = [4504, 1520, 5857, 4094, 4157, 3902, 822, 6643, 2422, 7288, 8245, 9948, 2822, 1784, 7802, 3142, 9739, 5629, 5413, 7232];
+let k = 5;
+let n = arr.length;
+
+// sliding window technique
+function maxMin(k, arr) {
+  var result = Number.MAX_VALUE;
+
+  arr.sort((a,b)=>a-b);
+  for (let i = 0; i <= arr.length - k; i++){
+    console.log(arr[i], arr[i + k - 1], arr[i + k - 1] - arr[i]);
+    result = Math.min(result, arr[i + k - 1] - arr[i]);
+  }
+  
+  console.log({result})
+  return result;
+}
+
+maxMin(k, arr);
+
+/*--------------------------------------------------------------------------------------------------------------------*/
