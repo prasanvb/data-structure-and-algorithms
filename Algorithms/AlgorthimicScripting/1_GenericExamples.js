@@ -125,3 +125,19 @@ function whatIsInAName(collection, source) {
 logger(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }));
 logger(whatIsInAName([{"a": 1, "b": 2, "c": 3}], {"a": 1, "b": 9999, "c": 3}));
 logger(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+
+
+/*
+  --------------------------------------------------------------------------------------------------------------
+  Example : A pangram is a string that contains every letter of the alphabet.
+*/
+
+let s = 'We promptly judged antique ivory buckles for the next prize';
+
+function pangramChecker(s) {
+    let result = new Set(s.replaceAll(' ','').toLowerCase());
+
+    return (result.size === 26) ? 'pangram' : 'not pangram';
+}
+
+console.log(pangramChecker(s));
