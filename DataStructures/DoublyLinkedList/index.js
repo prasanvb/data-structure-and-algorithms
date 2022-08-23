@@ -26,6 +26,7 @@ class DoubleLinkedList {
     return this;
   }
 
+  // Big O: O(1)
   push(value) {
     if (value) {
       let newNode = new Node(value);
@@ -42,6 +43,7 @@ class DoubleLinkedList {
     return this;
   }
 
+  // Big O: O(1)
   pop() {
     if (this.length === 0) return undefined;
     let temp = this.tail;
@@ -57,6 +59,7 @@ class DoubleLinkedList {
     return temp;
   }
 
+  // Big O: O(1)
   unshift(value) {
     if (value) {
       let newNode = new Node(value);
@@ -73,6 +76,7 @@ class DoubleLinkedList {
     return this;
   }
 
+  // Big O: O(1)
   shift() {
     if (this.length === 0) return undefined;
     let temp = this.head;
@@ -88,6 +92,7 @@ class DoubleLinkedList {
     return temp;
   }
 
+  // Big O: O(n)
   get(index) {
     let parsedIndex = parseInt(index);
     let temp = this.head;
@@ -106,6 +111,7 @@ class DoubleLinkedList {
     return temp;
   }
 
+  // Big O: O(n)
   insert(index, value) {
     let parsedIndex = parseInt(index);
     if (this.length === 0 || parsedIndex < 0 || parsedIndex >= this.length)
@@ -125,6 +131,7 @@ class DoubleLinkedList {
     return this;
   }
 
+  // Big O: O(n)
   remove(index) {
     let parsedIndex = parseInt(index);
     if (this.length === 0 || parsedIndex < 0 || parsedIndex >= this.length)

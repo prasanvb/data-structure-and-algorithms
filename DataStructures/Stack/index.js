@@ -10,6 +10,7 @@ class Node {
   }
 }
 
+/* ------ Stack is FIRST IN LAST OUT concept  ------- */
 class Stack {
   constructor(value) {
     if (value) {
@@ -44,7 +45,7 @@ class Stack {
   }
 }
 
-/* ------ Stack is FIRST IN LAST OUT concept  ------- */
+
 
 let Example_1 = new Stack(10);
 Example_1.pushStack(20);

@@ -2,7 +2,6 @@ function logger(value) {
   console.dir(value, { depth: null });
   console.log("-----------------------");
 }
-
 class Node {
   constructor(value) {
     this.value = value;
@@ -10,6 +9,7 @@ class Node {
   }
 }
 
+/* ------ Queue is FIRST IN FIRST OUT concept  ------- */
 class Queue {
   constructor(value) {
     if (value) {
@@ -56,7 +56,7 @@ class Queue {
   }
 }
 
-/* ------ Queue is FIRST IN FIRST OUT concept  ------- */
+
 
 /* ------ Enqueue example ------ */
 let Example_1 = new Queue();
