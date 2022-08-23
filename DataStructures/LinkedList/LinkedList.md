@@ -14,4 +14,5 @@
   - `remove(index)` - Big O: O(n)
   - `reverse()` - Big O: O(n)
     - iterated using while loop, prev node, temp node and next node
-Note: when ever we iterate through a linked list we need at least one temp variable
+
+- NOTE: when ever we iterate through a linked list we need at least one temp variable

@@ -1,4 +1,4 @@
-# LinkedList
+# DoublyLinkedList
 
 - Each node has `value`, `previous` and `next` property
 - Each Linked list has `Head` and `Tail` identifier
@@ -12,4 +12,5 @@
   - `insert(index, value)` - Big O: O(n)
   - `remove(index)` - Big O: O(n)
   - `reverse()` - Big O: O(1)
-Note: when ever we iterate through a linked list we need at least one temp variable
+
+- NOTE: when ever we iterate through a linked list we need at least one temp variable
