@@ -1,4 +1,4 @@
-## Hash Table
+# Hash Table
 
 - A table is created with a specific address for each box.
 - Each box will hold the items are represented in `[key,value]` pair.

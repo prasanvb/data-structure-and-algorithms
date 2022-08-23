@@ -25,8 +25,9 @@ class LinkedList {
     return this;
   }
 
+  // Big O: O(1)
   push(value) {
-    const newNode = new Node(value);
+    let newNode = new Node(value);
     if (!this.head || !this.tail || this.length === 0) {
       this.head = newNode;
       this.tail = newNode;
@@ -38,6 +39,7 @@ class LinkedList {
     return this;
   }
 
+  // Big O: O(n)
   pop() {
     if (!this.head || !this.tail || this.length === 0) {
       console.error("Linked List is empty");
@@ -60,9 +62,10 @@ class LinkedList {
     return temp;
   }
 
+  // Big O: O(1)
   unshift(value) {
     if (value) {
-      const newNode = new Node(value);
+      let newNode = new Node(value);
       if (!this.head || !this.tail || this.length === 0) {
         this.head = newNode;
         this.tail = newNode;
@@ -75,6 +78,7 @@ class LinkedList {
     return this;
   }
 
+  // Big O: O(1)
   shift() {
     if (!this.head || !this.tail || this.length === 0) return undefined;
     let temp = this.head;
@@ -89,6 +93,7 @@ class LinkedList {
     return temp;
   }
 
+  // Big O: O(n)
   get(index) {
     let parsedIndex = parseInt(index);
     if (parsedIndex < 0 || parsedIndex >= this.length) return undefined;
@@ -99,6 +104,7 @@ class LinkedList {
     return temp;
   }
 
+  // Big O: O(n)
   set(index, value) {
     let temp = this.get(index);
     if (temp) {
@@ -108,24 +114,13 @@ class LinkedList {
     return false;
   }
 
+  // Big O: O(n)
   insert(index, value) {
     let parsedIndex = parseInt(index);
     if (parsedIndex < 0 || parsedIndex >= this.length) return undefined;
     if (parsedIndex === 0) return this.unshift(value);
     if (parsedIndex === this.length - 1) return this.push(value);
-    const newNode = new Node(value);
-    // if (parsedIndex > 0) {
-    //   let temp = this.head;
-    //   let pre = temp;
-    //   for (let i = 0; i < parsedIndex; i++) {
-    //     pre = temp;
-    //     temp = temp.next;
-    //   }
-    //   pre.next = newNode;
-    //   newNode.next = temp;
-    //   this.length++;
-    // }
-    // Alternative Approach
+    let newNode = new Node(value);
     let temp = this.get(index - 1);
     if (temp) {
       newNode.next = temp.next;
@@ -135,31 +130,34 @@ class LinkedList {
     return this;
   }
 
+  // Big O: O(n)
   remove(index) {
     let parsedIndex = parseInt(index);
     if (parsedIndex < 0 || parsedIndex >= this.length) return undefined;
     if (parsedIndex === 0) return this.shift();
     if (parsedIndex === this.length - 1) return this.pop();
     let temp = this.get(index);
-    let pre = this.get(index - 1);
+    let prev = this.get(index - 1);
     if (temp) {
-      pre.next = temp.next;
+      prev.next = temp.next;
       temp.next = null;
       this.length--;
     }
     return temp;
   }
 
+  // Big O: O(n)
   reverse() {
     let temp = this.head;
     this.head = this.tail;
     this.tail = temp;
-    let preNode = null;
+    let prevNode = null;
     let nextNode = temp.next;
-    for (let i = 0; i < this.length; i++) {
+    while(temp) { // Note: mainly useful if you are creating linked list without length
+    // for (let i = 0; i < this.length; i++) {
       nextNode = temp.next;
-      temp.next = preNode;
-      preNode = temp;
+      temp.next = prevNode;
+      prevNode = temp;
       temp = nextNode;
     }
     return this;

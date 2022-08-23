@@ -2,7 +2,10 @@
 
 ## Data Structures
 
-- Arrays
+- Arrays (in-built DS in JS)
+- Objects (in-built DS in JS)
+- Set (in-built DS in JS)
+- Map (in-built DS in JS)
 - Linked Lists
 - Doubly Linked Lists
 - Stacks
