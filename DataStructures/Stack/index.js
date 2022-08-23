@@ -24,8 +24,9 @@ class Stack {
     return this;
   }
 
+  // Big O: O(1)
   pushStack(value) {
-    // similar to UNSHIFT method in LinkedList
+    // similar to UNSHIFT operation
     if (!value) return undefined;
     let newNode = new Node(value);
     newNode.next = this.top;
@@ -34,8 +35,9 @@ class Stack {
     return this;
   }
 
+  // Big O: O(1)
   popStack() {
-    // similar to SHIFT method in LinkedList
+    // similar to SHIFT operation
     if (this.height === 0) return undefined;
     let temp = this.top;
     this.top = this.top.next;

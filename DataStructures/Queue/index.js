@@ -25,8 +25,9 @@ class Queue {
     return this;
   }
 
+  // Big O: O(1)
   enqueue(value) {
-    // similar to PUSH method in LinkedList
+    // similar to PUSH operation
     if (!value) return undefined;
     let newNode = new Node(value);
     if (this.length === 0) {
@@ -40,8 +41,9 @@ class Queue {
     return this;
   }
 
+  // Big O: O(1)
   dequeue() {
-    // similar to PUSH method in LinkedList
+    // similar to SHIFT operation
     if (this.length === 0) return undefined;
     let temp = this.first;
     if (this.length === 1) {
