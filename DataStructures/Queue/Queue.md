@@ -6,5 +6,5 @@
 - Queue Methods
   - `enqueue(value)` - Big O: O(1)  (Similar to `push` operation)
   - `dequeue()` - Big O: O(1)  (Similar to `shift` operation)
-  
-- NOTE: You can implement the Queue data structure simply using an array
+
+- NOTE: You can implement the Queue data structure simply using an array or an Object
