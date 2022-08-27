@@ -61,7 +61,7 @@ class CircularQueue {
   
   print() {
     let printCQ = []
-    if(!this.isEmpty){
+    if(!this.isEmpty()){
       let temp = this.first;
       for(let i = 0; i < this.length; i++) {
         printCQ.push(temp.value);
@@ -70,6 +70,20 @@ class CircularQueue {
       return printCQ;
     }
     return 'queue is empty'
+  }
+
+  peek(index) {
+    let val = null;
+    if(!this.isEmpty()){
+      let temp = this.first;
+      for(let i = 0; i < this.length; i++) {
+        if(index === i){
+          val = temp.value;
+        }
+        temp = temp.next;
+      } 
+    }
+  return val;
   }
 }
 
@@ -89,6 +103,7 @@ logger(myCQueue);
 logger(myCQueue.print());
 logger(myCQueue.dequeue());
 
+logger(myCQueue.peek(0));
 logger(myCQueue);
 
 logger(myCQueue.dequeue());
