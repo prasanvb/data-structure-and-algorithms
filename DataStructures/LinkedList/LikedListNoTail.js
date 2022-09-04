@@ -28,13 +28,14 @@ class LinkedList {
     if (this.isEmpty()) {
       return "List is Empty";
     }
-    let printValues = "";
+    let values = "";
     let temp = this.head;
     while (temp) {
-      printValues += `${temp.value}->`;
+      values += `${temp.value}->`;
       temp = temp.next;
     }
-    return printValues;
+    let length = this.length;
+    return { values, length };
   }
 
   // Prepend: O(1)
@@ -89,29 +90,81 @@ class LinkedList {
   }
 
   // O(n)
-  remove(index) {
+  removeIndex(index) {
     if (this.isEmpty()) return "List is empty";
     if (index > this.length - 1 || index < 0) return "index out of range";
     if (index === 0) {
       let temp = this.head;
       this.head = temp.next;
       temp.next = null;
+      this.length--;
       return temp;
     } else {
-      if (this) {
-        let pre = null;
-        let temp = this.head;
-        let tempIndex = 0;
-        while (tempIndex !== index) {
-          pre = temp;
-          temp = temp.next;
-          tempIndex++;
-        }
+      let pre = null;
+      let temp = this.head;
+      let tempIndex = 0;
+      while (tempIndex !== index) {
+        pre = temp;
+        temp = temp.next;
+        tempIndex++;
+      }
+      pre.next = temp.next;
+      temp.next = null;
+      this.length--;
+      return temp;
+    }
+  }
+
+  // O(n)
+  removeValue(value) {
+    if (this.isEmpty()) return "List is empty";
+    if (this.head.value === value) {
+      let temp = this.head;
+      this.head = temp.next;
+      temp.next = null;
+      this.length--;
+      return temp;
+    } else {
+      let pre = null;
+      let temp = this.head;
+      for (let i = 0; i < this.length - 1 && temp.value !== value; i++) {
+        pre = temp;
+        temp = temp.next;
+      }
+      if (temp.value === value) {
         pre.next = temp.next;
         temp.next = null;
+        this.length--;
         return temp;
+      } else {
+        return "item not found";
       }
     }
+  }
+
+  // O(n)
+  get(index) {
+    // also called as Find or Search
+    if (this.isEmpty()) return "List is Empty";
+    if (index < 0 || index > this.length - 1) return "index out of range";
+    let temp = this.head;
+    for (let i = 0; i < this.length - 1 && i !== index; i++) {
+      temp = temp.next;
+    }
+    return temp.value;
+  }
+
+  reverse() {
+    let prev = null;
+    let temp = this.head;
+    while (temp) {
+      let after = temp.next;
+      temp.next = prev;
+      prev = temp;
+      temp = after;
+    }
+    this.head = prev;
+    return this;
   }
 }
 
@@ -129,15 +182,25 @@ myLinkedList.push(200);
 myLinkedList.push(11);
 myLinkedList.push(78);
 
-// logger(myLinkedList.insert(98, '123'))
-// logger(myLinkedList.insert(-1, '123'))
-// logger(myLinkedList.insert(1, '123'))
-// logger(myLinkedList.insert(0, 'apple'))
+myLinkedList.insert(98, 123);
+myLinkedList.insert(-1, 123);
+myLinkedList.insert(1, 123);
+myLinkedList.insert(0, "apple");
 
-myLinkedList.remove(98);
-myLinkedList.remove(-98);
+logger(myLinkedList.removeIndex(98));
+logger(myLinkedList.removeIndex(-98));
+logger(myLinkedList.removeIndex(0));
+logger(myLinkedList.removeIndex(2));
+
+logger(myLinkedList.removeValue(-98));
+logger(myLinkedList.removeValue(100));
+logger(myLinkedList.removeValue(200));
 logger(myLinkedList.print());
-logger(myLinkedList.remove(0));
-logger(myLinkedList.print());
-logger(myLinkedList.remove(2));
+
+logger(myLinkedList.get(90));
+logger(myLinkedList.get(-90));
+logger(myLinkedList.get(0));
+logger(myLinkedList.get(2));
+
+myLinkedList.reverse();
 logger(myLinkedList.print());
