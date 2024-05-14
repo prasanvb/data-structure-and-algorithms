@@ -13,17 +13,17 @@
 
 ## Big O Notation
 
-- O(n): code was executed `n` number for times depending on the input (i.e. function holding a single for-loop). It is called Linear Time Complexity, if it takes the same time regardless of the number of inputs.
+- O(n): code was executed `n` number for times depending on the input (i.e. function holding a single for-loop). It is called **Linear Time Complexity**, if it takes the same time regardless of the number of inputs.
 
 - Drop Constants: O(2n) ~ O(n) - code was executed n+n number for times (i.e, two same `n` number for-loops iterations one after another inside a function)
 
-- Simplify O(n^n): O(n^2) called Quadratic Time Complexity or O(n^3) or O(n^4) or O(n^n) ~ O(n^2) - code was executed `n*n` number for times (i.e, two nested for-loops iterations executed `n` of times each inside a function)
-  - O(n^2) called Quadratic Time Complexity
-  - O(n^3) called Cubic Time Complexity
+- Simplify O(n^n): O(n^2) called Quadratic Time Complexity or O(n^3) or O(n^4) or O(n^n) ~ O(n^2) - code was executed `n*n` number for times (i.e, two **nested for-loops** iterations executed `n` of times each inside a function)
+  - O(n^2) called **Quadratic Time Complexity**
+  - O(n^3) called **Cubic Time Complexity**
 
 - Drop Non-Dominants: O(n^2+n) ~ O(n^2) - code was executed `n*n` number for times and then `n` number fo times (i.e, two nested for-loops and a simple for-loop inside a function)
 
-- Constant Times: O(1) - ir respective of the input given code was executed only once (i.e. simple addition inside function)
+- Constant Times: O(1) - irrespective of the input given code was executed only once (i.e. simple addition inside function)
 
 - O(log n) is called Logarithmic time complexity, where the input size is reduced by half every iteration.
   - Divide and conquer an sorted Array
