@@ -31,7 +31,7 @@
   - divide it until you reach single item that is
     - [1,2,3,4] [5,6,7,8]
     - [1,2] [3,4] [5,6] [7,8]
-    - [1][2][3][4][5][6][7][8]
+    - [1] [2] [3] [4] [5] [6] [7] [8]
   - notice you where able to divide initial array into 3 level until you reached single item array
   - i.e. 2^3 = 8 or we can say log2 8 = 3
   - O(nlog n) - used on some sorting algorithm
