@@ -3,7 +3,7 @@ const quickSort = (arr) => {
     return arr;
   }
   
-  console.log({arr});
+  // console.log({arr});
 
   let pivot=arr[arr.length-1];
   let leftArr=[];
