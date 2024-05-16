@@ -5,21 +5,18 @@
 // const B = [3, 4]
 // AxB = [ [1, 3], [1, 4], [2, 3], [2, 4] ]
 
-
-
-
 const cartesianProduct = (arr1, arr2) => {
-    let tempArr = [];
-    
-    for(let i of arr1){
-      for(let j of arr2){
-        tempArr.push([i, j]);
-      }  
+  let tempArr = [];
+
+  for (let i of arr1) {
+    for (let j of arr2) {
+      tempArr.push([i, j]);
     }
-    
-    return tempArr;
   }
-  
-  const arr1 = [1, 2];
-  const arr2 = [3, 4, 5];
-  console.log(cartesianProduct(arr1, arr2));
+
+  return tempArr;
+};
+
+const arr1 = [1, 2];
+const arr2 = [3, 4, 5];
+console.log(cartesianProduct(arr1, arr2));
