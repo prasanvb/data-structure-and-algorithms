@@ -19,6 +19,7 @@
 // clear()
 // size
 // forEach() - O(n)
+// Iterators - for...of, forEach, key, values, entries
 // **
 
 // initialize set with value
