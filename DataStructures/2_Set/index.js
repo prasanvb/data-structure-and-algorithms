@@ -10,8 +10,22 @@
 // Insertion order is maintained in arrays but it is not the case with sets
 // Searching and deleting an element in the set is faster compared to arrays
 
-// initialize set
+// **
+// SET METHODS
+// new Set() - O(n)
+// add(value) - O(1)
+// has(value) - O(1)
+// delete(value) - O(1)
+// clear()
+// size
+// forEach() - O(n)
+// **
+
+// initialize set with value
 const set = new Set([1, 2]);
+
+// initialize set without value
+// const set = new Set();
 
 set.add(3);
 set.add(4);
@@ -31,6 +45,8 @@ console.log({ set });
 for (const item of set) {
   console.log({ item });
 }
+
+set.forEach(i => console.log(i));
 
 set.clear();
 
