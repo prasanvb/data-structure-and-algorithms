@@ -19,6 +19,7 @@
 // size
 // clear()
 // Iterators - for...of, forEach, key, values, entries
+// Note: you can convert Object <=> Map
 // **
 
 const map = new Map([
