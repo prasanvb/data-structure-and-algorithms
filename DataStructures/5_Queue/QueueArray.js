@@ -13,9 +13,9 @@
 // enqueue(value) - O(n)
 // dequeue() - O(n)
 // isEmpty()
-// peak()
+// peek()
 // size()
-// printQueue
+// print
 // **
 
 class Queue {
@@ -35,7 +35,7 @@ class Queue {
     return this.table.length === 0;
   }
 
-  peak() {
+  peek() {
     if (this.isEmpty()) return null;
     return this.table[0];
   }
@@ -44,14 +44,14 @@ class Queue {
     return this.table.length;
   }
 
-  printQueue() {
+  print() {
     return this.table.toString();
   }
 }
 
 const Q = new Queue();
 
-console.log("peak: ", Q.peak());
+console.log("peek: ", Q.peek());
 console.log("isEmpty: ", Q.isEmpty());
 console.log("size: ", Q.size());
 
@@ -62,8 +62,8 @@ console.log("enqueue: ", Q.enqueue(40));
 
 console.log("dequeue: ", Q.dequeue());
 
-console.log("peak: ", Q.peak());
+console.log("peek: ", Q.peek());
 console.log("isEmpty: ", Q.isEmpty());
 console.log("size: ", Q.size());
 
-console.log("printQueue: ", Q.printQueue());
+console.log("print: ", Q.print());

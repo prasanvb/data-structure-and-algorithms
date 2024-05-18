@@ -5,9 +5,9 @@
 // enqueue(value) - O(1)
 // dequeue() - O(1)
 // isEmpty()
-// peak()
+// peek()
 // size()
-// printQueue
+// print
 // **
 
 class Queue {
@@ -34,7 +34,7 @@ class Queue {
     return this.front === 0 && this.rear === 0;
   }
 
-  peak() {
+  peek() {
     if (this.isEmpty()) return null;
     return this.obj[this.front];
   }
@@ -43,14 +43,14 @@ class Queue {
     return this.rear - this.front;
   }
 
-  printQueue() {
+  print() {
     return this.obj;
   }
 }
 
 const Q = new Queue();
 
-console.log("peak: ", Q.peak());
+console.log("peek: ", Q.peek());
 console.log("isEmpty: ", Q.isEmpty());
 console.log("size: ", Q.size());
 
@@ -63,9 +63,9 @@ Q.enqueue(40);
 
 console.log("dequeue: ", Q.dequeue());
 
-console.log("peak: ", Q.peak());
+console.log("peek: ", Q.peek());
 console.log("isEmpty: ", Q.isEmpty());
 console.log("size: ", Q.size());
 
-console.log("printQueue: ", Q.printQueue());
+console.log("print: ", Q.print());
 console.log(Q);
