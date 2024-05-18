@@ -1,3 +1,15 @@
+// Stack Object 
+
+// **
+// STACK METHODS
+// push(value) - O(1)
+// pop() - O(1)
+// isEmpty()
+// peek()
+// size()
+// print()
+// **
+
 class Stack {
     constructor() {
         this.obj = {};

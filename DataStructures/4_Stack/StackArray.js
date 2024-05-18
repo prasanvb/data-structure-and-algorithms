@@ -1,3 +1,16 @@
+// Stack Array 
+
+// **
+// STACK METHODS
+// push(value) - O(n)
+// pop() - O(n)
+// isEmpty()
+// peek()
+// size()
+// print()
+// **
+
+
 class Stack {
     constructor() {
         this.table = [];
