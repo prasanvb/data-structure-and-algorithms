@@ -1,4 +1,5 @@
 // Stack Array 
+// The stack data structure is a sequential collection of elements that follows the principle of First In Last Out (FILO)
 
 // **
 // STACK METHODS
