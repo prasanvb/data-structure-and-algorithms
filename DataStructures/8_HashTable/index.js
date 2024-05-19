@@ -65,7 +65,7 @@ class HashTable {
     }
   }
 
-  display() {
+  print() {
     for (let i = 0; i < this.table.length; i++) {
       if (this.table[i]) {
         console.log({ index: i, bucket: this.table[i] });
@@ -91,4 +91,4 @@ console.log(htb.remove("ega"));
 console.log(htb.remove("gea"));
 console.log(htb.remove("address"));
 
-htb.display();
+htb.print();
