@@ -8,6 +8,16 @@
 //   • Dequeue, which removes an element from the front/head of the collection
 // Usage - AWS FIFO queue, streaming data packets, playlist
 
+// **
+// CIRCULAR QUEUE METHODS
+// enqueue(value) - O(1)
+// dequeue() - O(1)
+// isEmpty()
+// peek()
+// size()
+// print()
+// **
+
 class CircularQueue {
   constructor(capacity) {
     this.obj = {};
