@@ -15,11 +15,13 @@ class Queue {
     this.obj = {};
     this.front = 0;
     this.rear = 0;
+    this.currentLength = 0;
   }
 
   enqueue(value) {
     this.obj[this.rear] = value;
     this.rear++;
+    this.currentLength++;
   }
 
   dequeue() {
@@ -27,11 +29,12 @@ class Queue {
     const item = this.obj[this.front];
     delete this.obj[this.front];
     this.front++;
+    this.currentLength--;
     return item;
   }
 
   isEmpty() {
-    return this.front === 0 && this.rear === 0;
+    return this.currentLength === 0;
   }
 
   peek() {
@@ -40,7 +43,7 @@ class Queue {
   }
 
   size() {
-    return this.rear - this.front;
+    return this.currentLength;
   }
 
   print() {
@@ -60,6 +63,7 @@ Q.enqueue(10);
 Q.enqueue(20);
 Q.enqueue(30);
 Q.enqueue(40);
+console.log(Q);
 
 console.log("dequeue: ", Q.dequeue());
 

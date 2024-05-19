@@ -9,79 +9,76 @@
 // Usage - AWS FIFO queue, streaming data packets, playlist
 
 class CircularQueue {
-    constructor(capacity) {
-      this.obj = {};
-      this.rear = 0;
-      this.front = 0;
-      this.currentLength = 0;
-      this.capacity = capacity;
-    }
-  
-    enqueue(value) {
-      if (this.currentLength != this.capacity) {
-        this.obj[this.rear] = value;
-        this.rear = (this.rear + 1) % this.capacity;
-        this.currentLength++;
-      } else {
-        console.log("Capacity full");
-      }
-    }
-  
-    dequeue() {
-      if (this.isEmpty()) return null;
-      const item = this.obj[this.front];
-      delete this.obj[this.front];
-      this.front = (this.front + 1) % this.capacity;
-      this.currentLength--;
-      return item;
-    }
-  
-    isEmpty() {
-      return this.rear === 0 && this.front === 0 && this.currentLength === 0;
-    }
-  
-    peek() {
-      if (this.isEmpty()) return null;
-      return this.obj[this.front];
-    }
-  
-    size() {
-      return this.currentLength;
-    }
-  
-    print() {
-      return Object.values(this.obj);
-    }
+  constructor(capacity) {
+    this.obj = {};
+    this.rear = 0;
+    this.front = 0;
+    this.currentLength = 0;
+    this.capacity = capacity;
   }
-  
-  const CQ = new CircularQueue(5);
-  
-  console.log("peek: ", CQ.peek());
-  console.log("isEmpty: ", CQ.isEmpty());
-  console.log("size: ", CQ.size());
-  
-  console.log("dequeue: ", CQ.dequeue());
-  
-  CQ.enqueue(10);
-  console.log(CQ);
-  CQ.enqueue(20);
-  console.log(CQ);
-  CQ.enqueue(30);
-  console.log(CQ);
-  CQ.enqueue(40);
-  console.log(CQ);
-  CQ.enqueue(50);
-  console.log(CQ);
-  CQ.enqueue(60);
-  console.log(CQ);
-  console.log("dequeue: ", CQ.dequeue());
-  console.log(CQ);
-  console.log("dequeue: ", CQ.dequeue());
-  console.log(CQ);
-  
-  
-  console.log("peek: ", CQ.peek());
-  console.log("isEmpty: ", CQ.isEmpty());
-  console.log("size: ", CQ.size());
-  CQ.enqueue(60);
-  console.log(CQ);
+
+  enqueue(value) {
+    if (this.currentLength === this.capacity) return null;
+    this.obj[this.rear] = value;
+    this.rear = (this.rear + 1) % this.capacity;
+    this.currentLength++;
+    return value;
+  }
+
+  dequeue() {
+    if (this.isEmpty()) return null;
+    const item = this.obj[this.front];
+    delete this.obj[this.front];
+    this.front = (this.front + 1) % this.capacity;
+    this.currentLength--;
+    return item;
+  }
+
+  isEmpty() {
+    return this.currentLength === 0;
+  }
+
+  peek() {
+    if (this.isEmpty()) return null;
+    return this.obj[this.front];
+  }
+
+  size() {
+    return this.currentLength;
+  }
+
+  print() {
+    return Object.values(this.obj);
+  }
+}
+
+const CQ = new CircularQueue(5);
+
+console.log("peek: ", CQ.peek());
+console.log("isEmpty: ", CQ.isEmpty());
+console.log("size: ", CQ.size());
+
+console.log("dequeue: ", CQ.dequeue());
+
+console.log("enqueue: ", CQ.enqueue(10));
+// console.log(CQ);
+console.log("enqueue: ", CQ.enqueue(20));
+// console.log(CQ);
+console.log("enqueue: ", CQ.enqueue(30));
+// console.log(CQ);
+console.log("enqueue: ", CQ.enqueue(40));
+// console.log(CQ);
+console.log("enqueue: ", CQ.enqueue(50));
+console.log(CQ);
+console.log("enqueue: ", CQ.enqueue(60));
+// console.log(CQ);
+console.log("dequeue: ", CQ.dequeue());
+console.log(CQ);
+console.log("dequeue: ", CQ.dequeue());
+console.log(CQ);
+
+console.log("peek: ", CQ.peek());
+console.log("isEmpty: ", CQ.isEmpty());
+console.log("size: ", CQ.size());
+CQ.enqueue(60);
+console.log(CQ);
