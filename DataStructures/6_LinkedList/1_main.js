@@ -128,19 +128,17 @@ class LinkedList {
   }
 
   reverse() {
-    if (this.isEmpty()) return null;
+    // two pointers
+    let prev = null;
     let current = this.head;
-    let temp;
-    let prev;
-    while(current){
-      temp = current;
-      temp.next = null;
-      current = current.next
+
+    while (current) {
+      let next = current.next;
+      current.next = prev;
       prev = current;
-      prev.next = temp;
-      
-      console.log({temp, temp, current})
+      current = next;
     }
+    this.head = prev;
   }
 
   print() {
@@ -187,5 +185,6 @@ console.log("removeValue: ", L.removeValue("4"));
 
 console.log("print: ", L.print());
 L.reverse();
+console.log("print: ", L.print());
 
-console.dir(L, { depth: null });
+// console.dir(L, { depth: null });
