@@ -1,11 +1,13 @@
 
 // LINKEDLIST METHODS
-// push(value) - Big O: O(1) (aka Append)
-// pop() - Big O: O(1)
-// unshift(value) - Big O: O(1)  (aka Prepend)
-// shift() - Big O: O(1)
-// get(index) - Big O: O(n)
-// set(index) - Big O: O(n)
-// insert(index, value) - Big O: O(n)
-// remove(index) - Big O: O(n)
-// reverse() - Big O: O(1)
+// prepend(value) - O(1)
+// append(value) - O(1)
+// removeFromFront() - O(1)
+// removeFromEnd() - O(1)
+// insert(index, value) - O(n)
+// remove(index) - O(n)
+// search(value) - O(n)
+// removeValue(value) - O(n)
+// reverse() - O(1)
+// print(index) - O(n)
+
