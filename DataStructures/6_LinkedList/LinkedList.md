@@ -1,18 +1,15 @@
 # LinkedList
 
-- Each node has `value` and `next` property
-- Each Linked list has `Head` and `Tail` identifier and `length`
-- LinkedList Methods
-  - `push(value)` - Big O: O(1) (aka Append)
-  - `pop()` - Big O: O(n)
-    - iterated using while loop, prev node and temp node
-  - `unshift(value)` - Big O: O(1)  (aka Prepend)
-  - `shift()` - Big O: O(1)
-  - `get(index)` - Big O: O(n)
-  - `set(index)` - Big O: O(n)
-  - `insert(index, value)` - Big O: O(n)
-  - `remove(index)` - Big O: O(n)
-  - `reverse()` - Big O: O(n)
-    - iterated using while loop, prev node, temp node and next node
+- A linked list is a linear data structure that includes a series of connected nodes
+- Each node consists of a data value and a pointer that points to the next node
+- The list elements can be easily inserted or removed without reallocation or reorganization of the entire structure
+- Random access of elements is not feasible and accessing an element has linear time complexity
+- The linked list data structure supports three main operations
+    Insertion - to add an element at the beginning, end or at a given index in the list
+    Deletion - to remove an item given its index or value
+    Search - to find an element given its value
 
-- NOTE: when ever we iterate through a linked list we need at least one temp variable
+## Linked List Usage
+
+- All applications of both stacks and queues are applications of linked lists
+- Image viewer/slider

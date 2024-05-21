@@ -1,3 +1,4 @@
+
 // Linkedlist without tail (only head)
 
 // INITIAL PARAMETERS
@@ -145,6 +146,7 @@ class LinkedList {
     // if (index > -1) return this.remove(index);
     // return null;
 
+    // two pointer method
     let temp;
 
     if (this.head.value === value) {
