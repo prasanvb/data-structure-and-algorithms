@@ -41,6 +41,10 @@ class LinkedList {
     return this.size;
   }
 
+  headTail() {
+    return { head: this.head, tail: this.tail };
+  }
+
   prepend(value) {
     if (!value) return null;
 
@@ -95,20 +99,18 @@ class LinkedList {
   removeFromEnd() {
     if (this.isEmpty()) return null;
 
-    let temp;
-    temp = this.tail;
+    let temp = this.tail;
+    let prev = this.head;
 
     if (this.size === 1) {
       this.head = null;
       this.tail = null;
     } else {
-      let prev = this.head;
-
       while (prev.next && prev.next.next !== null) {
         prev = prev.next;
       }
 
-      if (prev) {
+      if (prev.next) {
         prev.next = null;
         this.tail = prev;
       }
@@ -129,12 +131,15 @@ class LinkedList {
       node.next = this.head;
       this.head = node;
     } else {
-      let prev = this.head;
+      let current = this.head;
       for (let i = 0; i < index - 1; i++) {
-        prev = prev.next;
+        current = current.next;
       }
-      node.next = prev.next;
-      prev.next = node;
+      node.next = current.next;
+      current.next = node;
+      if (node.next === null) {
+        this.tail = node;
+      }
     }
 
     this.size++;
@@ -159,6 +164,10 @@ class LinkedList {
       }
 
       if (prev.next) {
+        if (prev.next === this.tail) {
+          this.tail = prev;
+        }
+
         temp = prev.next;
         prev.next = temp.next;
         temp.next = null;
@@ -238,8 +247,8 @@ console.log("remove: ", L.remove(-1));
 console.log("remove: ", L.remove(100));
 console.log("remove: ", L.remove(0));
 console.log("remove: ", L.remove(2));
-console.log("remove: ", L.remove(3));
 console.log("print: ", L.print());
+console.log("remove: ", L.remove(3));
 
 console.log("search: ", L.search("11"));
 console.log("search: ", L.search("100"));
