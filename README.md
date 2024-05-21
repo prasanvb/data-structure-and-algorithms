@@ -7,27 +7,27 @@
 - Set (in-built DS in JS)
 - Map (in-built DS in JS)
 - Linked Lists
-- Doubly Linked Lists
+  - Linked List Without Tail
+  - Linked List With Tail
+  - Linked List Stack
+  - Linked List Queue
+  - Doubly Linked List
 - Stacks
 - Queues
-- Binary Search Tree
 - Hash Tables
+- Binary Search Tree
 - Graphs
 
 ## Algorithms
 
+- Searching
+  - Binary Search
 - Sorting
   - Bubble Sort (Basic)
   - Selection Sort (Basic)
   - Insertion Sort (Basic)
   - Merge Sort
   - Quick Sort
-
-## Searching
-
-- Binary Search Tree (Tree Traversal)
-  - Breadth First Search
-  - Depth First Search
 
 ### Description
 
