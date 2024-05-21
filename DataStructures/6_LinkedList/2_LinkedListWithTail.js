@@ -9,7 +9,9 @@
 // isEmpty()
 // getSize()
 // prepend(value) - O(1)
-// append(value)  - O(n)
+// append(value) - O(1)
+// removeFromFront() - O(1)
+// removeFromEnd() - O(1)
 // insert(index, value) - O(n)
 // remove(index) - O(n)
 // search(value) - O(n)
@@ -27,6 +29,7 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.tail = null;
     this.size = 0;
   }
 
@@ -40,15 +43,19 @@ class LinkedList {
 
   prepend(value) {
     if (!value) return null;
+
     const node = new Node(value);
+
     if (this.isEmpty()) {
       this.head = node;
+      this.tail = node;
     } else {
       node.next = this.head;
       this.head = node;
     }
+
     this.size++;
-    return node;
+    return value;
   }
 
   append(value) {
@@ -58,141 +65,71 @@ class LinkedList {
 
     if (this.isEmpty()) {
       this.head = node;
+      this.tail = node;
     } else {
-      let current = this.head;
-      while (current.next) {
-        current = current.next;
-      }
-      current.next = node;
+      this.tail.next = node;
+      this.tail = node;
     }
+
     this.size++;
-    return node;
+    return value;
   }
 
-  insert(index, value) {
-    if (index < 0 || index > this.size || !value) return null;
-    if (index === 0) return this.prepend(value);
+  removeFromFront() {
+    if (this.isEmpty()) return null;
 
-    const node = new Node(value);
-    let current = this.head;
-    let currentIndex = 0;
-
-    while (current) {
-      current = current.next;
-      currentIndex++;
-      if (currentIndex === index - 1) {
-        node.next = current.next;
-        current.next = node;
-        this.size++;
-        return node;
-      }
-    }
-  }
-
-  remove(index) {
-    if (index < 0 || index >= this.size) return null;
-
-    let current = this.head;
-    let currentIndex = 0;
     let temp;
+    temp = this.head;
 
-    // index === 0
-    if (currentIndex === index) {
-      temp = this.head;
-      // this.head = temp.next;
+    if (this.size === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
       this.head = this.head.next;
-      temp.next = null;
     }
 
-    //  0 < index < size
-    while (current) {
-      current = current.next;
-      currentIndex++;
-      if (currentIndex === index - 1) {
-        temp = current.next;
-        current.next = temp.next;
-        // current.next = current.next.next;
-        temp.next = null;
+    this.size--;
+    return temp.value;
+  }
+
+  removeFromEnd() {
+    if (this.isEmpty()) return null;
+
+    let temp;
+    temp = this.tail;
+
+    if (this.size === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      let prev = this.head;
+
+      while (prev.next && prev.next.next !== null) {
+        prev = prev.next;
+      }
+
+      if (prev) {
+        prev.next = null;
+        this.tail = prev;
       }
     }
 
     this.size--;
-    return { index, temp };
-  }
-
-  // search for value and return index
-  search(value) {
-    if (!value) return null;
-
-    let current = this.head;
-    let currentIndex = 0;
-    while (current) {
-      if (current.value === value) {
-        return currentIndex;
-      }
-      current = current.next;
-      currentIndex++;
-    }
-
-    return -1;
-  }
-
-  // remove first matching value
-  removeValue(value) {
-    if (!value) return null;
-
-    // reuse existing methods
-    // let index = this.search(value);
-    // if (index > -1) return this.remove(index);
-    // return null;
-
-    // two pointer method
-    let temp;
-
-    if (this.head.value === value) {
-      temp = this.head;
-      this.head = this.head.next;
-      this.size--;
-      return temp.value;
-    } else {
-      let prev = this.head;
-      while (prev.next && prev.next.value !== value) {
-        prev = prev.next;
-      }
-      if (prev.next) {
-        temp = prev.next;
-        prev.next = temp.next;
-        this.size--;
-        return temp.value;
-      }
-    }
-
-    return -1;
-  }
-
-  reverse() {
-    // two pointers
-    let prev = null;
-    let current = this.head;
-
-    while (current) {
-      let next = current.next;
-      current.next = prev;
-      prev = current;
-      current = next;
-    }
-    this.head = prev;
+    return temp.value;
   }
 
   print() {
     if (this.isEmpty()) return null;
+
     let current = this.head;
     let linkedList = "";
+
     while (current) {
-      linkedList += `${current.value} ${current.next ? "->" : ""} `;
+      linkedList += `${current.value} ${current.next ? "->" : ""}`;
       current = current.next;
     }
-    return linkedList;
+
+    return { size: this.size, linkedList };
   }
 }
 
@@ -200,36 +137,21 @@ const L = new LinkedList();
 console.log("prepend: ", L.prepend());
 console.log("print: ", L.print());
 
-console.log("insert: ", L.insert(0, "10"));
+console.log("prepend: ", L.prepend("100"));
+console.log("removeFromFront: ", L.removeFromFront());
+
+console.log("append: ", L.append("200"));
+console.log("removeFromEnd: ", L.removeFromEnd());
 
 console.log("prepend: ", L.prepend("3"));
 console.log("prepend: ", L.prepend("2"));
 
 console.log("append: ", L.append("11"));
 console.log("append: ", L.append("12"));
-
-console.log("insert: ", L.insert(0, "1"));
-console.log("insert: ", L.insert(100, "-100"));
-console.log("insert: ", L.insert(3, "4"));
-console.log("insert: ", L.insert(7, "200"));
-
-console.log("print: ", L.print());
-console.log("remove: ", L.remove(10));
-console.log("remove: ", L.remove(7));
-console.log("remove: ", L.remove(4));
-console.log("remove: ", L.remove(0));
-
-console.log("print: ", L.print());
-console.log("search: ", L.search("99"));
-console.log("search: ", L.search("12"));
-
-console.log("print: ", L.print());
-console.log("removeValue: ", L.removeValue("2"));
-console.log("removeValue: ", L.removeValue("200"));
-console.log("removeValue: ", L.removeValue("12"));
-
-console.log("print: ", L.print());
-L.reverse();
 console.log("print: ", L.print());
 
-console.dir(L, { depth: null });
+console.log("removeFromFront: ", L.removeFromFront());
+console.log("removeFromEnd: ", L.removeFromEnd());
+
+console.log("print: ", L.print());
+// console.dir(L, { depth: null });
