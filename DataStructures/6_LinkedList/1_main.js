@@ -1,3 +1,21 @@
+// Linkedlist without tail (only head)
+
+// INITIAL PARAMETERS
+// Node(value) - value, next
+// head, size
+
+// LINKEDLIST METHODS
+// isEmpty()
+// getSize()
+// prepend(value) - O(1)
+// append(value)  - O(n)
+// insert(index, value) - O(n)
+// remove(index) - O(n)
+// search(value) - O(n)
+// removeValue(value) - O(n)
+// reverse() - O(n)
+// print() - O(n)
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -111,8 +129,8 @@ class LinkedList {
       if (current.value === value) {
         return currentIndex;
       }
-      currentIndex++;
       current = current.next;
+      currentIndex++;
     }
 
     return -1;
@@ -120,11 +138,34 @@ class LinkedList {
 
   // remove first matching value
   removeValue(value) {
-    let index = this.search(value);
-    if (index > -1) {
-      return this.remove(index);
+    if (!value) return null;
+
+    // reuse existing methods
+    // let index = this.search(value);
+    // if (index > -1) return this.remove(index);
+    // return null;
+
+    let temp;
+
+    if (this.head.value === value) {
+      temp = this.head;
+      this.head = this.head.next;
+      this.size--;
+      return temp.value;
+    } else {
+      let prev = this.head;
+      while (prev.next && prev.next.value !== value) {
+        prev = prev.next;
+      }
+      if (prev.next) {
+        temp = prev.next;
+        prev.next = temp.next;
+        this.size--;
+        return temp.value;
+      }
     }
-    return null;
+
+    return -1;
   }
 
   reverse() {
@@ -180,11 +221,13 @@ console.log("print: ", L.print());
 console.log("search: ", L.search("99"));
 console.log("search: ", L.search("12"));
 
-console.log("removeValue: ", L.removeValue("99"));
-console.log("removeValue: ", L.removeValue("4"));
+console.log("print: ", L.print());
+console.log("removeValue: ", L.removeValue("2"));
+console.log("removeValue: ", L.removeValue("200"));
+console.log("removeValue: ", L.removeValue("12"));
 
 console.log("print: ", L.print());
 L.reverse();
 console.log("print: ", L.print());
 
-// console.dir(L, { depth: null });
+console.dir(L, { depth: null });
