@@ -10,6 +10,14 @@
 // { index: 17, bucket: [ [ 'name', 'prasan' ], [ 'nema', 'venkat' ] ] }
 
 
+// HASH TABLE METH0DS
+// _hash(key) - generates hash for the key
+// set(key, value) - O(1)
+// get(key) - O(1)
+// remove(key) -O(1)
+// print() - O(n)
+
+
 class HashTable {
   constructor(size) {
     this.size = size;
