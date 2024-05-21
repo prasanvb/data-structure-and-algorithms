@@ -1,4 +1,3 @@
-
 // Linkedlist without tail (only head)
 
 // INITIAL PARAMETERS
@@ -40,13 +39,16 @@ class LinkedList {
 
   prepend(value) {
     if (!value) return null;
+
     const node = new Node(value);
+
     if (this.isEmpty()) {
       this.head = node;
     } else {
       node.next = this.head;
       this.head = node;
     }
+
     this.size++;
     return node;
   }
@@ -60,31 +62,40 @@ class LinkedList {
       this.head = node;
     } else {
       let current = this.head;
+
       while (current.next) {
         current = current.next;
       }
+
       current.next = node;
     }
+
     this.size++;
     return node;
   }
 
   insert(index, value) {
     if (index < 0 || index > this.size || !value) return null;
-    if (index === 0) return this.prepend(value);
 
     const node = new Node(value);
     let current = this.head;
     let currentIndex = 0;
 
-    while (current) {
-      current = current.next;
-      currentIndex++;
-      if (currentIndex === index - 1) {
-        node.next = current.next;
-        current.next = node;
-        this.size++;
-        return node;
+    // index === 0
+    if (currentIndex === index) {
+      node.next = this.head;
+      this.head = node;
+    } else {
+      //  0 < index < size
+      while (current) {
+        current = current.next;
+        currentIndex++;
+        if (currentIndex === index - 1) {
+          node.next = current.next;
+          current.next = node;
+          this.size++;
+          return node;
+        }
       }
     }
   }
@@ -92,27 +103,27 @@ class LinkedList {
   remove(index) {
     if (index < 0 || index >= this.size) return null;
 
+    let temp;
     let current = this.head;
     let currentIndex = 0;
-    let temp;
 
     // index === 0
     if (currentIndex === index) {
       temp = this.head;
-      // this.head = temp.next;
-      this.head = this.head.next;
+      this.head = temp.next;
       temp.next = null;
-    }
+    } else {
+      //  0 < index < size
+      while (current) {
+        current = current.next;
+        currentIndex++;
 
-    //  0 < index < size
-    while (current) {
-      current = current.next;
-      currentIndex++;
-      if (currentIndex === index - 1) {
-        temp = current.next;
-        current.next = temp.next;
-        // current.next = current.next.next;
-        temp.next = null;
+        if (currentIndex === index - 1) {
+          temp = current.next;
+          current.next = temp.next;
+          // current.next = current.next.next;
+          temp.next = null;
+        }
       }
     }
 
@@ -126,10 +137,12 @@ class LinkedList {
 
     let current = this.head;
     let currentIndex = 0;
+
     while (current) {
       if (current.value === value) {
         return currentIndex;
       }
+
       current = current.next;
       currentIndex++;
     }
@@ -148,6 +161,7 @@ class LinkedList {
 
     // two pointer method
     let temp;
+    let prev = this.head;
 
     if (this.head.value === value) {
       temp = this.head;
@@ -155,10 +169,10 @@ class LinkedList {
       this.size--;
       return temp.value;
     } else {
-      let prev = this.head;
       while (prev.next && prev.next.value !== value) {
         prev = prev.next;
       }
+
       if (prev.next) {
         temp = prev.next;
         prev.next = temp.next;
@@ -181,6 +195,7 @@ class LinkedList {
       prev = current;
       current = next;
     }
+
     this.head = prev;
   }
 

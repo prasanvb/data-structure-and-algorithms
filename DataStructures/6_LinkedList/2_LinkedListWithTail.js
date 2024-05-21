@@ -118,6 +118,77 @@ class LinkedList {
     return temp.value;
   }
 
+  insert(index, value) {
+    if (this.isEmpty()) return null;
+    if (index < 0 || index > this.size || !value) return null;
+
+    const node = new Node(value);
+    if (index === 0) {
+      // this.prepend(value);
+
+      node.next = this.head;
+      this.head = node;
+    } else {
+      let prev = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        prev = prev.next;
+      }
+      node.next = prev.next;
+      prev.next = node;
+    }
+
+    this.size++;
+    return { index, value };
+  }
+
+  remove(index) {
+    if (this.isEmpty()) return null;
+    if (index < 0 || index > this.size) return null;
+
+    let temp;
+
+    if (index === 0) {
+      // return this.removeFromFront();
+      temp = this.head;
+      this.head = this.head.next;
+    } else {
+      let prev = this.head;
+
+      for (let i = 0; i < index - 1; i++) {
+        prev = prev.next;
+      }
+
+      if (prev.next) {
+        temp = prev.next;
+        prev.next = temp.next;
+        temp.next = null;
+      }
+    }
+
+    this.size--;
+    return { index, value: temp.value };
+  }
+
+  search(value) {
+    if (this.isEmpty() || !value) return null;
+
+    let current = this.head;
+    let currentIndex = 0;
+
+    while (current) {
+      if (current.value === value) {
+        return currentIndex;
+      }
+      current = current.next;
+      currentIndex++;
+    }
+
+    return -1;
+  }
+
+  // removeValue(value) - O(n)
+  // reverse() - O(n)
+
   print() {
     if (this.isEmpty()) return null;
 
@@ -125,7 +196,7 @@ class LinkedList {
     let linkedList = "";
 
     while (current) {
-      linkedList += `${current.value} ${current.next ? "->" : ""}`;
+      linkedList += `${current.value} ${current.next ? "-> " : ""}`;
       current = current.next;
     }
 
@@ -145,6 +216,7 @@ console.log("removeFromEnd: ", L.removeFromEnd());
 
 console.log("prepend: ", L.prepend("3"));
 console.log("prepend: ", L.prepend("2"));
+console.log("prepend: ", L.prepend("1"));
 
 console.log("append: ", L.append("11"));
 console.log("append: ", L.append("12"));
@@ -152,6 +224,23 @@ console.log("print: ", L.print());
 
 console.log("removeFromFront: ", L.removeFromFront());
 console.log("removeFromEnd: ", L.removeFromEnd());
-
 console.log("print: ", L.print());
+
+console.log("insert: ", L.insert());
+console.log("insert: ", L.insert(-1, "x"));
+console.log("insert: ", L.insert(100, "x"));
+console.log("insert: ", L.insert(0, "1"));
+console.log("insert: ", L.insert(3, "10"));
+console.log("insert: ", L.insert(5, "12"));
+console.log("print: ", L.print());
+
+console.log("remove: ", L.remove(-1));
+console.log("remove: ", L.remove(100));
+console.log("remove: ", L.remove(0));
+console.log("remove: ", L.remove(2));
+console.log("remove: ", L.remove(3));
+console.log("print: ", L.print());
+
+console.log("search: ", L.search("11"));
+console.log("search: ", L.search("100"));
 // console.dir(L, { depth: null });
