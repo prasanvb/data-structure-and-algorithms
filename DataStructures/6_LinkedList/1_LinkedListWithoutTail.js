@@ -85,6 +85,8 @@ class LinkedList {
     if (currentIndex === index) {
       node.next = this.head;
       this.head = node;
+      this.size++;
+      return node;
     } else {
       //  0 < index < size
       while (current) {
@@ -112,6 +114,8 @@ class LinkedList {
       temp = this.head;
       this.head = temp.next;
       temp.next = null;
+      this.size--;
+      return { index, temp };
     } else {
       //  0 < index < size
       while (current) {
@@ -123,12 +127,11 @@ class LinkedList {
           current.next = temp.next;
           // current.next = current.next.next;
           temp.next = null;
+          this.size--;
+          return { index, temp };
         }
       }
     }
-
-    this.size--;
-    return { index, temp };
   }
 
   // search for value and return index
@@ -161,7 +164,7 @@ class LinkedList {
 
     // two pointer method
     let temp;
-    let prev = this.head;
+    let current = this.head;
 
     if (this.head.value === value) {
       temp = this.head;
@@ -169,13 +172,13 @@ class LinkedList {
       this.size--;
       return temp.value;
     } else {
-      while (prev.next && prev.next.value !== value) {
-        prev = prev.next;
+      while (current.next && current.next.value !== value) {
+        current = current.next;
       }
 
-      if (prev.next) {
-        temp = prev.next;
-        prev.next = temp.next;
+      if (current.next) {
+        temp = current.next;
+        current.next = temp.next;
         this.size--;
         return temp.value;
       }

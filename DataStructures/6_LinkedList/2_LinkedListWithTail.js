@@ -204,7 +204,7 @@ class LinkedList {
     return { index, value: temp.value };
   }
 
-  // removeValue()  - O(n)
+  // removeValue(value)  - O(n)
   // reverse() - O(n)
 
   print() {
