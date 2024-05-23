@@ -2,7 +2,7 @@
 
 // INITIAL PARAMETERS
 // Node(value) - value, next
-// head, size
+// LinkedList - head, size
 
 // LINKEDLIST METHODS
 // isEmpty()

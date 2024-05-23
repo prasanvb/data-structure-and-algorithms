@@ -1,12 +1,15 @@
 // Queue Object
 
+// INITIAL PARAMETERS
+// Queue() - obj, front, rear, length
+
 // **
 // QUEUE METHODS
+// isEmpty()
+// size()
 // enqueue(value) - O(1)
 // dequeue() - O(1)
-// isEmpty()
 // peek()
-// size()
 // print()
 // **
 
@@ -15,13 +18,13 @@ class Queue {
     this.obj = {};
     this.front = 0;
     this.rear = 0;
-    this.currentLength = 0;
+    this.length = 0;
   }
 
   enqueue(value) {
     this.obj[this.rear] = value;
     this.rear++;
-    this.currentLength++;
+    this.length++;
   }
 
   dequeue() {
@@ -29,12 +32,12 @@ class Queue {
     const item = this.obj[this.front];
     delete this.obj[this.front];
     this.front++;
-    this.currentLength--;
+    this.length--;
     return item;
   }
 
   isEmpty() {
-    return this.currentLength === 0;
+    return this.length === 0;
   }
 
   peek() {
@@ -43,7 +46,7 @@ class Queue {
   }
 
   size() {
-    return this.currentLength;
+    return this.length;
   }
 
   print() {

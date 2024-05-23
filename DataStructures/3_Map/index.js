@@ -16,38 +16,37 @@
 // has(key) - O(1)
 // get(key) - O(1)
 // delete(key) - O(1)
-// size
+// size        NOTE: size is not a function, just a property of Map datatype
 // clear()
 // Iterators - for...of, forEach, key, values, entries
-// Note: you can convert Object <=> Map
+// NOTE: you can convert Object <=> Map
 // **
 
 const map = new Map([
-    ["a", 1],
-    ["bb", 22],
-    [3, "c"],
-  ]);
-  
-  const res = map.set("d", 4);
-  console.log("set new key => value pair:", res);
-  
-  // has
-  console.log("has a: ", map.has("a"));
-  
-  // delete
-  map.delete("bb");
-  
-  // get
-  console.log("get value of d", map.get("d"));
-  
-  // size
-  console.log("size: ", map.size);
-  
-  // Iterate map
-  for (const [key, value] of map) {
-    console.log({ key, value });
-  }
-  
-  // clear
-  console.log("clear: ", map.clear());
-  
+  ["a", 1],
+  ["bb", 22],
+  [3, "c"],
+]);
+
+const res = map.set("d", 4);
+console.log("set new key => value pair:", res);
+
+// has
+console.log("has a: ", map.has("a"));
+
+// delete
+map.delete("bb");
+
+// get
+console.log("get value of d", map.get("d"));
+
+// size
+console.log("size: ", map.size);
+
+// Iterate map
+for (const [key, value] of map) {
+  console.log({ key, value });
+}
+
+// clear
+console.log("clear: ", map.clear());

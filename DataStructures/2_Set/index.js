@@ -17,7 +17,7 @@
 // has(value) - O(1)
 // delete(value) - O(1)
 // clear()
-// size
+// size   NOTE: size is not a function, just a property of Set datatype
 // forEach() - O(n)
 // Iterators - for...of, forEach, key, values, entries
 // **
