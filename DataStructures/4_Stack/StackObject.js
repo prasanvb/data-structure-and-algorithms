@@ -5,11 +5,11 @@
 
 // **
 // STACK METHODS
-// isEmpty()
-// size()
 // push(value) - O(1)
 // pop() - O(1)
+// isEmpty()
 // peek()
+// size()
 // print()
 // **
 

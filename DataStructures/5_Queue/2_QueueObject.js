@@ -5,11 +5,11 @@
 
 // **
 // QUEUE METHODS
-// isEmpty()
-// size()
 // enqueue(value) - O(1)
 // dequeue() - O(1)
+// isEmpty()
 // peek()
+// size()
 // print()
 // **
 

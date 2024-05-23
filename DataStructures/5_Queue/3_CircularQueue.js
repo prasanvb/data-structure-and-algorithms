@@ -1,5 +1,4 @@
 // Circular Queue
-
 // The size of the queue is fixed and a single block of memory is used as if the first element is connected to the last element
 // Also referred to as circular buffer or ring buffer and follows the FIFO principle
 // A circular queue will reuse the empty block created during the dequeue operation When working with queues of fixed maximum size, a circular queue is a great implementation choice
@@ -8,7 +7,12 @@
 //   • Dequeue, which removes an element from the front/head of the collection
 // Usage - AWS FIFO queue, streaming data packets, playlist
 
+
 // **
+// INITIAL PARAMETERS
+// CircularQueue(capacity) - obj, front, rear, length, capacity
+
+
 // CIRCULAR QUEUE METHODS
 // enqueue(value) - O(1)
 // dequeue() - O(1)
@@ -23,15 +27,15 @@ class CircularQueue {
     this.obj = {};
     this.rear = 0;
     this.front = 0;
-    this.currentLength = 0;
+    this.length = 0;
     this.capacity = capacity;
   }
 
   enqueue(value) {
-    if (this.currentLength === this.capacity) return null;
+    if (this.length === this.capacity) return null;
     this.obj[this.rear] = value;
     this.rear = (this.rear + 1) % this.capacity;
-    this.currentLength++;
+    this.length++;
     return value;
   }
 
@@ -40,12 +44,12 @@ class CircularQueue {
     const item = this.obj[this.front];
     delete this.obj[this.front];
     this.front = (this.front + 1) % this.capacity;
-    this.currentLength--;
+    this.length--;
     return item;
   }
 
   isEmpty() {
-    return this.currentLength === 0;
+    return this.length === 0;
   }
 
   peek() {
@@ -54,7 +58,7 @@ class CircularQueue {
   }
 
   size() {
-    return this.currentLength;
+    return this.length;
   }
 
   print() {
