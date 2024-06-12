@@ -1,4 +1,3 @@
-
 // Linkedlist without tail (only head)
 
 // INITIAL PARAMETERS
@@ -204,6 +203,7 @@ class LinkedList {
     return { index, value: temp.value };
   }
 
+  // TODO
   // removeValue(value)  - O(n)
   // reverse() - O(n)
 
