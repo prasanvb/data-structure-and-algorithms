@@ -9,7 +9,8 @@
     Deletion - to remove an item given its index or value
     Search - to find an element given its value
 
-## Linked List Usage
+## Usage
 
+- Best for use cases that involve sequential access
 - All applications of both stacks and queues are applications of linked lists
 - Image viewer/slider
