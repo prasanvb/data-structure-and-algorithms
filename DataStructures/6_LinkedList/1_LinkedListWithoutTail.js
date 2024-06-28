@@ -77,28 +77,20 @@ class LinkedList {
   insert(index, value) {
     if (index < 0 || index > this.size || !value) return null;
 
-    const node = new Node(value);
-    let current = this.head;
-    let currentIndex = 0;
+    if (index === 0) {
+      return this.prepend(value);
+    } else {
+      const node = new Node(value);
+      let current = this.head;
 
-    // index === 0
-    if (currentIndex === index) {
-      node.next = this.head;
-      this.head = node;
+      for (let i = 0; i < index - 1; i++) {
+        current = prev.next;
+      }
+
+      node.next = current.next;
+      current.next = node;
       this.size++;
       return node;
-    } else {
-      //  0 < index < size
-      while (current) {
-        current = current.next;
-        currentIndex++;
-        if (currentIndex === index - 1) {
-          node.next = current.next;
-          current.next = node;
-          this.size++;
-          return node;
-        }
-      }
     }
   }
 
@@ -215,39 +207,38 @@ class LinkedList {
 }
 
 const L = new LinkedList();
-console.log("prepend: ", L.prepend());
-console.log("print: ", L.print());
+L.prepend();
+L.prepend("3");
+L.prepend("2");
 
-console.log("insert: ", L.insert(0, "10"));
+L.append();
+L.append("11");
+L.append("12");
 
-console.log("prepend: ", L.prepend("3"));
-console.log("prepend: ", L.prepend("2"));
-
-console.log("append: ", L.append("11"));
-console.log("append: ", L.append("12"));
-
-console.log("insert: ", L.insert(0, "1"));
-console.log("insert: ", L.insert(100, "-100"));
-console.log("insert: ", L.insert(3, "4"));
-console.log("insert: ", L.insert(7, "200"));
+L.insert(0, "1");
+L.insert(1, "x");
+L.insert(100, "-100");
+L.insert(4, "4");
+L.insert(7, "200");
 
 console.log("print: ", L.print());
-console.log("remove: ", L.remove(10));
-console.log("remove: ", L.remove(7));
-console.log("remove: ", L.remove(4));
-console.log("remove: ", L.remove(0));
 
-console.log("print: ", L.print());
-console.log("search: ", L.search("99"));
-console.log("search: ", L.search("12"));
+// console.log("remove: ", L.remove(10));
+// console.log("remove: ", L.remove(7));
+// console.log("remove: ", L.remove(4));
+// console.log("remove: ", L.remove(0));
 
-console.log("print: ", L.print());
-console.log("removeValue: ", L.removeValue("2"));
-console.log("removeValue: ", L.removeValue("200"));
-console.log("removeValue: ", L.removeValue("12"));
+// console.log("print: ", L.print());
+// console.log("search: ", L.search("99"));
+// console.log("search: ", L.search("12"));
 
-console.log("print: ", L.print());
-L.reverse();
-console.log("print: ", L.print());
+// console.log("print: ", L.print());
+// console.log("removeValue: ", L.removeValue("2"));
+// console.log("removeValue: ", L.removeValue("200"));
+// console.log("removeValue: ", L.removeValue("12"));
 
-console.dir(L, { depth: null });
+// console.log("print: ", L.print());
+// L.reverse();
+// console.log("print: ", L.print());
+
+// console.dir(L, { depth: null });
