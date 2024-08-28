@@ -1,5 +1,5 @@
 // Мар
-// A map is an unordered collection of key-value pairs. Both keys and values can be of any data type
+// A map is an ordered collection (guarantees the keys to be iterated in order of insertion) of key-value pairs. Both keys and values can be of any data type
 // To retrieve a value, you can use the the corresponding key Maps are iterables. They can be used with a for of loop
 
 // Object vs Map
