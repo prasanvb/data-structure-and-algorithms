@@ -30,6 +30,6 @@ const binarySearch = (arr, target) => {
   }
   
   
-  console.log(binarySearch([-8, -1,  0, 3, 6,  7, 9], -8));
-  console.log(binarySearch([-8, -1,  0, 3, 6,  7, 9], 7));
-  console.log(binarySearch([-8, -1,  0, 3, 6,  7, 9], 2));
+  console.log("[-8, -1,  0, 3, 6,  7, 9], -8 index: ", binarySearch([-8, -1,  0, 3, 6,  7, 9], -8));
+  console.log("[-8, -1,  0, 3, 6,  7, 9], 7 index: ", binarySearch([-8, -1,  0, 3, 6,  7, 9], 7));
+  console.log("[-8, -1,  0, 3, 6,  7, 9], 2 index: ", binarySearch([-8, -1,  0, 3, 6,  7, 9], 2));
